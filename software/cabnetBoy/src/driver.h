@@ -76,14 +76,25 @@ static inline void JOY_init(void) {  //가변 저항에 대한 초기화 추가
 #define JOY_all_released()        (JOY_act_released() && JOY_pad_released())
 
 //슬라이더. 
-static inline uint8_t Get_PIN_R_SLIDER(){
-uint16_t val = ADC_read();
+static inline uint8_t Get_PIN_R_SLIDER() {
+    ADC_input(PIN_R_SLIDER);  
+    uint16_t raw_value = ADC_read();  
 
- 
+    //  0~255 범위로 매핑
+    uint8_t slider_value = (uint8_t)((raw_value * 255) / 1023);
 
-
+    return slider_value;
 }
+//로타리 
+static inline uint8_t Get_PIN_R_ROTATE() {
+    ADC_input(PIN_R_ROTATE);  
+    uint16_t raw_value = ADC_read();  
 
+    //  0~255 범위로 매핑
+    uint8_t rotate_value = (uint8_t)((raw_value * 255) / 1023);
+
+    return rotate_value;
+}
 
 static inline uint8_t JOY_up_pressed(void) {
  uint16_t val = ADC_read();
