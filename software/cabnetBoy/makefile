@@ -20,7 +20,7 @@
 # ===================================================================================
 
 # Files and Folders
-TARGET   = tiny_arkanoid
+TARGET   = cabnetBoy
 INCLUDE  = include
 SOURCE   = src
 BIN      = bin
