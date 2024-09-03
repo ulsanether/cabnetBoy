@@ -17,9 +17,11 @@ extern "C" {
 #include "oled_min.h"
 
 // Pin assignments
-#define PIN_ACT     PA2   // pin connected to fire button
-#define PIN_BEEP    PA1   // pin connected to buzzer
+#define PIN_ACT     PD5   // pin connected to fire button
+#define PIN_BEEP    PA2   // pin connected to buzzer
 #define PIN_PAD     PC4   // pin conected to direction buttons
+#define PIN_R_SLIDER PD6  // 슬라이더 게이지
+#define PIN_R_ROTATE PD4   //로타리 조정기
 #define PIN_SCL     PC2   // pin connected to OLED (I2C SCL)
 #define PIN_SDA     PC1   // pin connected to OLED (I2C SDA)
 
@@ -41,14 +43,22 @@ extern "C" {
 #define JOY_SLOWDOWN()    DLY_us(600)
 
 // Init driver
-static inline void JOY_init(void) {
+static inline void JOY_init(void) {  //가변 저항에 대한 초기화 추가 
   PIN_input_AN(PIN_PAD);
   PIN_input_PU(PIN_ACT);
+
+
   PIN_output(PIN_BEEP);
   PIN_high(PIN_BEEP);
   OLED_init();
   ADC_init();
   ADC_input(PIN_PAD);
+  //---------------------추가된 것. 
+  ADC_input(PIN_R_SLIDER);
+  ADC_input(PIN_R_ROTATE);
+
+// -------------------여기까지 
+
 }
 
 // OLED commands
@@ -64,6 +74,16 @@ static inline void JOY_init(void) {
 #define JOY_pad_pressed()         (ADC_read() > 10)
 #define JOY_pad_released()        (ADC_read() <= 10)
 #define JOY_all_released()        (JOY_act_released() && JOY_pad_released())
+
+//슬라이더. 
+static inline uint8_t Get_PIN_R_SLIDER(){
+uint16_t val = ADC_read();
+
+ 
+
+
+}
+
 
 static inline uint8_t JOY_up_pressed(void) {
  uint16_t val = ADC_read();
