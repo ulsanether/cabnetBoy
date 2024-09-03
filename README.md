@@ -1,2 +1,10 @@
-# cabnetBoy
- 게임기_캐비닛보이
+## cabnetBoy
+
+캐비닛보이
+
+###
+
+![캐비닛보이](cabnetBoy.png)
+
+ 
+---
