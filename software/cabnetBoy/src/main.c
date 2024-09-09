@@ -65,7 +65,7 @@ void ResetBall(GROUPE *VAR);
 // ===================================================================================
 int main(void) {
 // Setup
-  JOY_init();
+  JOY_init();  //초기화 
 
 // Loop
   while(1) {
