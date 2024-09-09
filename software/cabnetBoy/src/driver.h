@@ -98,10 +98,17 @@ static inline uint8_t Get_PIN_R_ROTATE() {
 
 static inline uint8_t JOY_up_pressed(void) {
  uint16_t val = ADC_read();
+
+
+
+//val값을 받아서 어떻게 쓸건지 확인을 해야함. 
  return(   ((val > JOY_N  - JOY_DEV) && (val < JOY_N  + JOY_DEV))
          | ((val > JOY_NE - JOY_DEV) && (val < JOY_NE + JOY_DEV))
          | ((val > JOY_NW - JOY_DEV) && (val < JOY_NW + JOY_DEV)) );
 }
+
+
+
 
 static inline uint8_t JOY_down_pressed(void) {
  uint16_t val = ADC_read();
