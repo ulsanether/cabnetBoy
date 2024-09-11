@@ -30,10 +30,10 @@ uint8_t launch;
 uint8_t Px;
 uint8_t Py;
 uint8_t BlocsGrid[6][5];
-float Ballxpos;
+float Ballxpos;   //볼 위치 
 float SIMBallxpos;
 float Ballypos;
-float SIMBallypos;
+float SIMBallypos;  //볼 위치 
 float BallSpeedx;
 float SIMBallSpeedx;
 float BallSpeedy;
