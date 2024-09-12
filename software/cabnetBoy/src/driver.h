@@ -68,12 +68,16 @@ static inline void JOY_init(void) {  //가변 저항에 대한 초기화 추가
 #define JOY_OLED_send_command(c)  OLED_send_command(c)
 #define JOY_OLED_data_start(y)    {OLED_setpos(0,y);OLED_data_start();}
 
+
+
 // Buttons
 #define JOY_act_pressed()         (!PIN_read(PIN_ACT))
 #define JOY_act_released()        (PIN_read(PIN_ACT))
 #define JOY_pad_pressed()         (ADC_read() > 10)
 #define JOY_pad_released()        (ADC_read() <= 10)
 #define JOY_all_released()        (JOY_act_released() && JOY_pad_released())
+
+
 
 //슬라이더. 
 static inline uint8_t Get_PIN_R_SLIDER() {
@@ -106,7 +110,6 @@ static inline uint8_t JOY_up_pressed(void) {
          | ((val > JOY_NE - JOY_DEV) && (val < JOY_NE + JOY_DEV))
          | ((val > JOY_NW - JOY_DEV) && (val < JOY_NW + JOY_DEV)) );
 }
-
 
 
 
