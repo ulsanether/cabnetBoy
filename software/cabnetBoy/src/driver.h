@@ -136,6 +136,8 @@ static inline uint8_t JOY_right_pressed(void) {
 
 // Buzzer
 void JOY_sound(uint8_t freq, uint8_t dur) {
+ 
+
   while(dur--) {
     #if JOY_SOUND == 1
     if(freq) PIN_low(PIN_BEEP);

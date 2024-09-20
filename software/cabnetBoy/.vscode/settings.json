@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "oled_min.h": "c"
+        "oled_min.h": "c",
+        "gpio.h": "c"
     }
 }

@@ -24,6 +24,15 @@
 extern "C" {
 #endif
 
+
+typedef struct GAMEDATA
+{
+   
+   
+   
+   }GAMEDATA;
+
+
 typedef struct GROUPE{
 uint8_t ANIMREFLECT;
 uint8_t launch;

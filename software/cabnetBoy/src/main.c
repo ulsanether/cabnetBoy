@@ -33,6 +33,9 @@
 // Function Prototypes
 // ===================================================================================
 void RsVarNewGame(GROUPE *VAR);
+
+
+
 void PLAYMUSIC(void);
 uint8_t BallMissing(GROUPE *VAR);
 uint8_t CheckLevelEnded(GROUPE *VAR);
