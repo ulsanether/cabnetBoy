@@ -77,8 +77,13 @@ int main(void) {
     Tiny_Flip(1, &VARIABLE);
     while(!JOY_act_pressed());
     RsVarNewGame(&VARIABLE);
-    Tiny_Flip(2,&VARIABLE);
+//live 값의 정체 알아야 할것. 
+
+
+    Tiny_Flip(2,&VARIABLE);  //2번은 백그라운드 설정. 
     PLAYMUSIC();
+
+
     LoadLevel(VARIABLE.LEVEL - 1, &VARIABLE);
     goto ONE;
   NEXTLEVEL:
@@ -156,6 +161,9 @@ VAR->live=3;
 VAR->ANIMREFLECT=0;
 LoadLevel(0,VAR);
 }
+
+
+
 
 void PLAYMUSIC(void){
 for (uint8_t t=0;t<92;t=t+2){
@@ -362,7 +370,8 @@ if ((Y<1)||(Y>VAR->live)||(X>121)||(X<119)) return 0x00;
 return ((LIVE[X-119]));}
 
 uint8_t SWIFT_TEXTURE=0;
-uint8_t background(uint8_t X,uint8_t Y){ 
+
+uint8_t background(uint8_t X,uint8_t Y){    //백 그라운드 배경
 if (X==0) SWIFT_TEXTURE=0;
 if (X<=105){
 if (SWIFT_TEXTURE<14) {SWIFT_TEXTURE++;}else{SWIFT_TEXTURE=0;}
