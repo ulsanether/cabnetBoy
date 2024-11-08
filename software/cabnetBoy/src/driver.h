@@ -26,13 +26,13 @@ extern "C" {
 #define PIN_SDA     PC1   // pin connected to OLED (I2C SDA)
 
 // Joypad calibration values
-#define JOY_N       197   // joypad UP
+#define JOY_N       210   // joypad UP
 #define JOY_NE      259   // joypad UP + RIGHT
 #define JOY_E       90    // joypad RIGHT
 #define JOY_SE      388   // joypad DOWN + RIGHT
-#define JOY_S       346   // joypad DOWN
+#define JOY_S       300    // joypad DOWN
 #define JOY_SW      616   // joypad DOWN + LEFT
-#define JOY_W       511   // joypad LEFT
+#define JOY_W       500   // joypad LEFT
 #define JOY_NW      567   // JOYPAD UP + LEFT
 #define JOY_DEV     20    // deviation
 
