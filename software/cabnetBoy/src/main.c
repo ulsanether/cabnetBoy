@@ -46,6 +46,7 @@ int main(void) {
 
 // Loop
   while(1) {
+    
     GROUPE VARIABLE;
   NEWGAME:
     Tiny_Flip(1, &VARIABLE);

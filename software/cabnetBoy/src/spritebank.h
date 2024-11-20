@@ -26,36 +26,6 @@ extern "C" {
 
 
 
-
-typedef struct GROUPE{
-uint8_t ANIMREFLECT;
-uint8_t launch;
-uint8_t Px;
-uint8_t Py;
-uint8_t BlocsGrid[6][5];
-float Ballxpos;   //볼 위치 
-float SIMBallxpos;
-float Ballypos;
-float SIMBallypos;  //볼 위치 
-float BallSpeedx;
-float SIMBallSpeedx;
-float BallSpeedy;
-float SIMBallSpeedy;
-int8_t TrackAngleOut;
-float Ballxposflip;
-float Ballyposflip;
-uint8_t BALLyDecal;
-uint8_t Ypos;
-uint8_t TrackBary;
-uint8_t TrackBaryDecal;
-uint8_t LEVEL;  //게임 레벨
-uint8_t LEVELSPEED;  //
-uint8_t live;
-uint8_t Frame;
-}GAMEGROUPE;
-
-
-
 typedef struct GROUPE{
 uint8_t ANIMREFLECT;
 uint8_t launch;
