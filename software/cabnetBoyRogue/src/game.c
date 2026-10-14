@@ -1,24 +1,25 @@
 // ============================================================================
-// game.c - cabnetBoy Rogue : a turn based, grid based, single player roguelike
+// game.c - cabnetBoy Rogue : turn based roguelike driven by the knob + slider
 // ============================================================================
 //
-// Design notes for a 16 KB / 2 KB machine with no FPU and no hardware divide:
+// Controls (all four analog/digital inputs of the cabnetBoy board are used):
 //
-//  * Integer only. No float anywhere (the old cabnetBoy firmware used float
-//    for the ball physics - that pulls in the soft-float library).
-//  * The level is stored as 2 bits per tile (32x16 = 128 bytes) instead of
-//    one byte per tile. Explored / visible maps are 1 bit per tile (64 B).
-//  * Nothing is double buffered: gfx streams one 8-pixel page at a time, so
-//    the renderer costs 128 bytes of RAM instead of a 1 KB frame buffer.
-//  * Everything is turn based, so the CPU can spend 25 ms redrawing after
-//    every key press and still feel instant.
+//   RV09 knob  (PD4, ADC7)  character facing  - turn the knob like a compass
+//   U5 slider  (PD6, ADC6)  POWER / MAGIC    - 1..5, read continuously
+//   LEFT       select weapon / item          - DAG SWD AXE STF POT
+//   ACT        attack / cast / use / take stairs
+//   UP         step one tile forward (bumps attack too)
+//   DOWN       wait one turn
+//              (if the slider is dead, DOWN cycles the power instead)
 //
-// Controls (UP / DOWN / LEFT buttons + ACT):
-//     UP     walk one tile forward (or attack whatever is in front)
-//     LEFT   turn counter clockwise
-//     DOWN   turn clockwise
-//     ACT    pick up / take stairs / wait one turn
-//   The RV09 knob also turns the player: twist right = turn clockwise.
+// Turning the knob changes facing WITHOUT spending a turn, exactly like
+// turning your head. Everything else spends a turn.
+//
+// Machine constraints this code respects:
+//   * RV32EC: no FPU, no hardware multiply/divide -> integer only.
+//   * 2 KB SRAM: the map is 2 bits per tile and the renderer streams one
+//     128 byte OLED page instead of holding a 1 KB frame buffer.
+//   * 16 KB flash: 8x8 font + 8 tiles + this file + drivers = ~6.4 KB.
 // ============================================================================
 #include "game.h"
 #include "retro.h"
@@ -32,8 +33,7 @@
 #define MAX_MON   10
 #define MAX_ITEM  6
 
-// terrain codes stored in the map, 2 bits each
-// (distinct from the graphic tile indices G_* in tiles.h)
+// terrain codes, 2 bits each
 #define TER_WALL   0
 #define TER_FLOOR  1
 #define TER_DOOR   2
@@ -45,9 +45,19 @@
 #define M_SNAKE   2
 #define M_ORC     3
 
-// item kinds
+// item kinds lying on the floor
 #define I_POTION  0
 #define I_GOLD    1
+
+// inventory slots
+#define INV_DAG   0
+#define INV_SWD   1
+#define INV_AXE   2
+#define INV_STF   3
+#define INV_POT   4
+#define INV_N     5
+
+#define MP_MAX    10
 
 typedef struct { uint8_t x, y, hp, kind; } mon_t;
 typedef struct { uint8_t x, y, kind; } item_t;
@@ -61,12 +71,18 @@ static item_t  items[MAX_ITEM];
 static uint8_t n_mon, n_item;
 
 static uint8_t px, py, facing;                // facing: 0=N 1=E 2=S 3=W
-static uint8_t hp, hp_max, depth, gold, alive;
+static uint8_t hp, hp_max, mp, depth, gold, potions;
+static uint8_t sel;                           // selected inventory slot
+static uint8_t power = 3;                     // 1..5, comes from the slider
 static uint16_t turns;
 
 static uint8_t cam_x, cam_y;
 static char status_buf[VIEW_W + 1];
 static char msg_buf[VIEW_W + 1];
+
+static const char INV_NAME[INV_N][4] = { "DAG", "SWD", "AXE", "STF", "POT" };
+static const int8_t DIRX[4] = { 0, 1, 0, -1 };
+static const int8_t DIRY[4] = { -1, 0, 1, 0 };
 
 // ------------------------------------------------------------ 2 bpp map ----
 static uint8_t mget(uint8_t x, uint8_t y) {
@@ -193,32 +209,31 @@ static void gen_level(void) {
       rooms[i].x = (uint8_t)(1 + retro_rnd_n(MAP_W - rooms[i].w - 2));
       rooms[i].y = (uint8_t)(1 + retro_rnd_n(MAP_H - rooms[i].h - 2));
       if (room_free(&rooms[i])) break;
-      if (++tries > 30) { rooms[i].w = 4; rooms[i].h = 2;
-                          rooms[i].x = 2 + i * 6; rooms[i].y = 2 + (i & 1) * 5;
-                          break; }
+      if (++tries > 30) {
+        rooms[i].w = 4; rooms[i].h = 2;
+        rooms[i].x = (uint8_t)(2 + i * 6);
+        rooms[i].y = (uint8_t)(2 + (i & 1) * 5);
+        break;
+      }
     }
     carve_room(&rooms[i]);
   }
 
   for (i = 1; i < nrooms; i++) {
-    uint8_t cx0 = rooms[i - 1].x + rooms[i - 1].w / 2;
-    uint8_t cy0 = rooms[i - 1].y + rooms[i - 1].h / 2;
-    uint8_t cx1 = rooms[i].x + rooms[i].w / 2;
-    uint8_t cy1 = rooms[i].y + rooms[i].h / 2;
+    uint8_t cx0 = (uint8_t)(rooms[i - 1].x + rooms[i - 1].w / 2);
+    uint8_t cy0 = (uint8_t)(rooms[i - 1].y + rooms[i - 1].h / 2);
+    uint8_t cx1 = (uint8_t)(rooms[i].x + rooms[i].w / 2);
+    uint8_t cy1 = (uint8_t)(rooms[i].y + rooms[i].h / 2);
     hcorr(cx0, cx1, cy0);
     vcorr(cy0, cy1, cx1);
   }
 
-  // player starts in the middle of room 0
   px = (uint8_t)(rooms[0].x + rooms[0].w / 2);
   py = (uint8_t)(rooms[0].y + rooms[0].h / 2);
-  facing = 1;
 
-  // stairs in the last room
   mset((uint8_t)(rooms[nrooms - 1].x + rooms[nrooms - 1].w / 2),
        (uint8_t)(rooms[nrooms - 1].y + rooms[nrooms - 1].h / 2), TER_STAIR);
 
-  // monsters: one to three per room except the starting room
   for (i = 1; i < nrooms && n_mon < MAX_MON; i++) {
     uint8_t cnt = (uint8_t)(1 + retro_rnd_n(2 + depth / 3));
     while (cnt-- && n_mon < MAX_MON) {
@@ -236,7 +251,6 @@ static void gen_level(void) {
     }
   }
 
-  // a couple of items
   for (i = 0; i < 3 && n_item < MAX_ITEM; i++) {
     uint8_t r = (uint8_t)(1 + retro_rnd_n(3));
     x = (uint8_t)(rooms[r].x + retro_rnd_n(rooms[r].w));
@@ -272,8 +286,7 @@ static uint8_t los(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1) {
 }
 
 static void fov_update(void) {
-  int8_t dx, dy;
-  int8_t x, y;
+  int8_t dx, dy, x, y;
   bitclear_all(vis);
   bitset(vis, px, py);
   bitset(seen, px, py);
@@ -290,12 +303,80 @@ static void fov_update(void) {
     }
 }
 
+// ===========================================================================
+// Analog controls
+// ===========================================================================
+
+// ---- knob -> facing --------------------------------------------------------
+// PD4 sits on the RV09 wiper: GND and VCC on the track ends, so the reading is
+// a ratiometric 0..1023 that does not drift with the battery. Averaging four
+// samples removes ADC jitter, which matters because a jittering knob would make
+// the @ spin on a sector boundary.
+static uint8_t knob_lo = 255, knob_hi = 0;
+
+static uint8_t knob_read(void) {
+  uint16_t s = 0;
+  uint8_t i;
+  for (i = 0; i < 4; i++) s += retro_knob();
+  return (uint8_t)(s >> 2);
+}
+
+static uint8_t knob_sector(void) {
+  uint8_t k = knob_read();
+  uint8_t span;
+  uint16_t q;
+
+  if (k < knob_lo) knob_lo = k;
+  if (k > knob_hi) knob_hi = k;
+  span = (uint8_t)(knob_hi - knob_lo);
+
+  if (span >= 90) q = (uint16_t)(k - knob_lo) * 4u / (span + 1u);  // self ranging
+  else            q = (uint16_t)k * 4u / 256u;                     // assume full swing
+  if (q > 3) q = 3;
+  return (uint8_t)q;
+}
+
+// ---- slider -> power / magic strength --------------------------------------
+// PD6 sits on the U5 B10K wiper. NOTE: on the current PCB revision U5 is wired
+// wrongly (VCC is on the wiper instead of an end), so this input reads a
+// constant until the two traces below the pot are cut and jumpered - see
+// PCB_Design_Review.md. The game detects the pinning and falls back to DOWN.
+static uint8_t slider_bad = 0;
+
+static uint8_t slider_power(void) {
+  uint8_t s = retro_slider();                    // 0..255
+  if (s > 8 && s < 248) slider_bad = 0;          // it left the rail -> it works
+  return (uint8_t)(1 + (((uint16_t)s * 5u) >> 8));   // -> 1..5
+}
+
+static void slider_probe(void) {
+  uint8_t i, v, lo = 255, hi = 0;
+  for (i = 0; i < 8; i++) {
+    v = retro_slider();
+    if (v < lo) lo = v;
+    if (v > hi) hi = v;
+    DLY_ms(3);
+  }
+  slider_bad = ((uint8_t)(hi - lo) < 6 && (lo > 248 || hi < 8)) ? 1 : 0;
+}
+
 // -------------------------------------------------------------- combat -----
 static const char MON_CH[4] = { 'R', 'G', 'S', 'O' };
 static const uint8_t MON_ATK[4] = { 1, 2, 2, 3 };
 
-static void player_attack(uint8_t mi) {
-  uint8_t dmg = (uint8_t)(1 + retro_rnd_n(2) + depth / 3);
+// melee damage for the selected weapon at the current power setting
+static uint8_t melee_damage(void) {
+  switch (sel) {
+    case INV_DAG: return (uint8_t)(2 + (power >> 1));
+    case INV_AXE: return (uint8_t)(4 + 2 * power);
+    default:      return (uint8_t)(3 + power);        // sword
+  }
+}
+
+static uint8_t spell_range(void)  { return (uint8_t)(1 + power); }
+static uint8_t spell_damage(void) { return (uint8_t)(2 * power); }
+
+static void kill_or_hurt(uint8_t mi, uint8_t dmg, const char *hit) {
   if (dmg >= mons[mi].hp) {
     mons[mi].hp = 0;
     retro_beep(140, 55);
@@ -303,12 +384,12 @@ static void player_attack(uint8_t mi) {
   } else {
     mons[mi].hp = (uint8_t)(mons[mi].hp - dmg);
     retro_beep(300, 12);
-    msg_set("YOU HIT IT");
+    msg_set(hit);
   }
 }
 
 static void hurts_player(uint8_t amount, const char *what) {
-  if (amount >= hp) hp = 0; else hp = (uint8_t)(hp - amount);
+  hp = (amount >= hp) ? 0 : (uint8_t)(hp - amount);
   retro_beep(110, 70);
   msg_set(what);
 }
@@ -317,9 +398,9 @@ static void monsters_turn(void) {
   uint8_t i;
   for (i = 0; i < n_mon; i++) {
     int8_t dx, dy, sx, sy;
-    uint8_t nx, ny;
+    uint8_t nx, ny, step;
     if (!mons[i].hp) continue;
-    if (!bitget(vis, mons[i].x, mons[i].y)) continue;   // only awake while seen
+    if (!bitget(vis, mons[i].x, mons[i].y)) continue;   // asleep until seen
 
     dx = (int8_t)((int8_t)px - (int8_t)mons[i].x);
     dy = (int8_t)((int8_t)py - (int8_t)mons[i].y);
@@ -331,8 +412,9 @@ static void monsters_turn(void) {
     }
     sx = (dx > 0) ? 1 : ((dx < 0) ? -1 : 0);
     sy = (dy > 0) ? 1 : ((dy < 0) ? -1 : 0);
+    if (!sx && !sy) continue;
 
-    for (uint8_t step = 0; step < 2; step++) {
+    for (step = 0; step < 2; step++) {
       if (step == 0) {
         if (iabs8(dx) >= iabs8(dy)) { nx = (uint8_t)(mons[i].x + sx); ny = mons[i].y; }
         else                        { nx = mons[i].x; ny = (uint8_t)(mons[i].y + sy); }
@@ -340,7 +422,6 @@ static void monsters_turn(void) {
         if (iabs8(dx) >= iabs8(dy)) { nx = mons[i].x; ny = (uint8_t)(mons[i].y + sy); }
         else                        { nx = (uint8_t)(mons[i].x + sx); ny = mons[i].y; }
       }
-      if (!sx && !sy) break;
       if (nx == px && ny == py) break;
       if (!walkable(nx, ny)) continue;
       if (mon_at(nx, ny) != 0xFF) continue;
@@ -353,28 +434,82 @@ static void monsters_turn(void) {
 
 // ----------------------------------------------------------- player act ----
 static void try_step(void) {
-  static const int8_t DX[4] = { 0, 1, 0, -1 };
-  static const int8_t DY[4] = { -1, 0, 1, 0 };
-  uint8_t nx = (uint8_t)(px + DX[facing]);
-  uint8_t ny = (uint8_t)(py + DY[facing]);
+  uint8_t nx = (uint8_t)(px + DIRX[facing]);
+  uint8_t ny = (uint8_t)(py + DIRY[facing]);
   uint8_t mi;
 
-  if (nx >= MAP_W || ny >= MAP_H) { retro_beep(90, 20); return; }
+  if (nx >= MAP_W || ny >= MAP_H) { retro_beep(90, 20); msg_set("ROCK AHEAD"); return; }
   mi = mon_at(nx, ny);
-  if (mi != 0xFF) { player_attack(mi); turns++; return; }
-  if (!walkable(nx, ny)) { retro_beep(90, 20); return; }
+  if (mi != 0xFF) {
+    if (sel == INV_AXE && power < 3) { msg_set("AXE TOO HEAVY"); retro_beep(90, 40); return; }
+    kill_or_hurt(mi, melee_damage(), "YOU HIT IT");
+    turns++;
+    return;
+  }
+  if (!walkable(nx, ny)) { retro_beep(90, 20); msg_set("ROCK AHEAD"); return; }
   px = nx;
   py = ny;
   turns++;
   retro_beep(1000, 5);
 }
 
+// magic: a bolt that travels along the facing direction, range and damage both
+// come from the slider. This is what makes the knob and the slider work together.
+static void cast_spell(void) {
+  uint8_t i, x, y;
+
+  if (mp < power) { msg_set("NOT ENOUGH MP"); retro_beep(90, 40); turns++; return; }
+  mp = (uint8_t)(mp - power);
+
+  for (i = 1; i <= spell_range(); i++) {
+    uint8_t mi;
+    x = (uint8_t)(px + DIRX[facing] * (int8_t)i);
+    y = (uint8_t)(py + DIRY[facing] * (int8_t)i);
+    if (x >= MAP_W || y >= MAP_H) break;
+    if (mget(x, y) == TER_WALL) break;
+    mi = mon_at(x, y);
+    if (mi != 0xFF) {
+      retro_beep(1800, 25);
+      kill_or_hurt(mi, spell_damage(), "THE BOLT HITS");
+      turns++;
+      return;
+    }
+  }
+  retro_beep(500, 40);
+  msg_set("THE BOLT FIZZLES");
+  turns++;
+}
+
+static void swing(void) {
+  uint8_t nx = (uint8_t)(px + DIRX[facing]);
+  uint8_t ny = (uint8_t)(py + DIRY[facing]);
+  uint8_t mi;
+
+  if (nx >= MAP_W || ny >= MAP_H) { msg_set("SWING AT ROCK"); turns++; return; }
+  mi = mon_at(nx, ny);
+  if (mi == 0xFF) { msg_set("NOTHING THERE"); retro_beep(300, 8); turns++; return; }
+  if (sel == INV_AXE && power < 3) { msg_set("AXE TOO HEAVY"); retro_beep(90, 40); return; }
+  kill_or_hurt(mi, melee_damage(), "YOU HIT IT");
+  turns++;
+}
+
+static void drink(void) {
+  if (!potions) { msg_set("NO POTION LEFT"); retro_beep(90, 30); turns++; return; }
+  potions--;
+  hp = (uint8_t)((hp + 6 > hp_max) ? hp_max : hp + 6);
+  mp = (uint8_t)((mp + 3 > MP_MAX) ? MP_MAX : mp + 3);
+  retro_beep(1400, 20);
+  msg_set("GLUG GLUG");
+  turns++;
+}
+
 static void do_act(void) {
   uint8_t ii = item_at(px, py);
-  if (ii != 0xFF) {
+
+  if (ii != 0xFF) {                       // standing on something: pick it up
     if (items[ii].kind == I_POTION) {
-      hp = (uint8_t)((hp + 6 > hp_max) ? hp_max : hp + 6);
-      msg_set("GLUG GLUG");
+      if (potions < 9) potions++;
+      msg_set("POTION STASHED");
     } else {
       gold = (uint8_t)(gold + 5 + retro_rnd_n(10));
       msg_set("YOU GOT GOLD");
@@ -384,9 +519,10 @@ static void do_act(void) {
     turns++;
     return;
   }
-  if (mget(px, py) == TER_STAIR) {
+  if (mget(px, py) == TER_STAIR) {         // descend
     depth++;
     hp = (uint8_t)((hp + 3 > hp_max) ? hp_max : hp + 3);
+    if (mp < MP_MAX) mp++;
     gen_level();
     fov_update();
     retro_beep(600, 40);
@@ -396,16 +532,24 @@ static void do_act(void) {
     turns++;
     return;
   }
-  msg_set("YOU WAIT");
-  retro_beep(400, 8);
-  turns++;
+  switch (sel) {
+    case INV_STF: cast_spell(); break;
+    case INV_POT: drink();      break;
+    default:      swing();      break;
+  }
+}
+
+static void cycle_select(void) {
+  sel = (uint8_t)((sel + 1) % INV_N);
+  retro_beep(1200, 6);
+  msg_set(INV_NAME[sel]);
 }
 
 // -------------------------------------------------------------- drawing ----
 static uint8_t cell_code(uint8_t x, uint8_t y) {
   uint8_t mi, ii, t;
 
-  if (x == px && y == py) return G_PLAYER;
+  if (x == px && y == py) return (uint8_t)(G_PL_N + facing);
   if (!bitget(seen, x, y)) return G_VOID;
 
   if (bitget(vis, x, y)) {
@@ -424,24 +568,24 @@ static uint8_t cell_code(uint8_t x, uint8_t y) {
   }
 }
 
+// HUD: "HP12 M10 P4 SWD" - hit points, mana, power setting, weapon
 static void build_status(void) {
   uint8_t i = 0;
   status_buf[i++] = 'H';
   status_buf[i++] = 'P';
   status_buf[i++] = (char)('0' + (hp / 10) % 10);
   status_buf[i++] = (char)('0' + hp % 10);
-  status_buf[i++] = '/';
-  status_buf[i++] = (char)('0' + (hp_max / 10) % 10);
-  status_buf[i++] = (char)('0' + hp_max % 10);
   status_buf[i++] = ' ';
-  status_buf[i++] = 'L';
-  status_buf[i++] = (char)('0' + (depth / 10) % 10);
-  status_buf[i++] = (char)('0' + depth % 10);
+  status_buf[i++] = 'M';
+  status_buf[i++] = (char)('0' + (mp / 10) % 10);
+  status_buf[i++] = (char)('0' + mp % 10);
   status_buf[i++] = ' ';
-  status_buf[i++] = 'G';
-  status_buf[i++] = (char)('0' + (gold / 100) % 10);
-  status_buf[i++] = (char)('0' + (gold / 10) % 10);
-  status_buf[i++] = (char)('0' + gold % 10);
+  status_buf[i++] = 'P';
+  status_buf[i++] = (char)('0' + power);
+  status_buf[i++] = ' ';
+  status_buf[i++] = INV_NAME[sel][0];
+  status_buf[i++] = INV_NAME[sel][1];
+  status_buf[i++] = INV_NAME[sel][2];
   status_buf[i] = 0;
 }
 
@@ -470,27 +614,31 @@ static void render(void) {
 }
 
 // ----------------------------------------------------------------- input ---
-// Blocking. Buttons are debounced; the RV09 knob is also read so it can be
-// used to turn the player.
-static uint8_t wait_key(void) {
-  uint8_t last_knob = retro_knob();
+// Waits for something worth redrawing. Returns 0 if only the knob or the slider
+// moved (a free action - the caller just redraws), otherwise the button mask.
+static uint8_t wait_event(void) {
   uint8_t b;
 
   for (;;) {
+    uint8_t f = knob_sector();
+    uint8_t p;
+
+    if (f != facing) {
+      facing = f;
+      retro_beep(1500, 4);                 // short tick: you can feel the sector
+      return 0;
+    }
+    p = slider_power();
+    if (!slider_bad && p != power) {
+      power = p;                           // live read-out, no turn spent
+      return 0;
+    }
     b = retro_buttons();
     if (b) {
       DLY_ms(12);
       if (retro_buttons() == b) {
         while (retro_buttons()) DLY_ms(5);
         return b;
-      }
-    }
-    {
-      uint8_t k = retro_knob();
-      int8_t d = (int8_t)(k - last_knob);
-      if (d > 40 || d < -40) {
-        last_knob = k;
-        return (d > 0) ? BTN_DOWN : BTN_LEFT;   // twist = turn
       }
     }
     DLY_ms(4);
@@ -501,12 +649,17 @@ static uint8_t wait_key(void) {
 static void new_game(void) {
   hp_max = 12;
   hp = hp_max;
+  mp = 8;
   depth = 1;
   gold = 0;
+  potions = 2;
+  sel = INV_SWD;
   turns = 0;
-  alive = 1;
   gen_level();
   fov_update();
+  knob_lo = 255;                       // let the knob self range from scratch
+  knob_hi = 0;
+  facing = knob_sector();
   msg_set("CABNETBOY ROGUE");
 }
 
@@ -515,7 +668,7 @@ static void game_over(void) {
   retro_beep(300, 120);
   retro_beep(200, 160);
   retro_beep(120, 260);
-  msg_num("YOU DIED SCORE ", gold);
+  msg_num("DEAD SCORE ", gold);
   hp = 0;
   render();
   for (;;) {
@@ -529,23 +682,36 @@ static void game_over(void) {
 void game_run(void) {
   uint8_t key;
 
+  slider_probe();
   new_game();
+  if (slider_bad) msg_set("SLIDER DEAD: FIX U5");
+
   for (;;) {
     render();
-    key = wait_key();
+    key = wait_event();
+    if (!key) continue;                  // knob / slider only, just redraw
 
     switch (key) {
-      case BTN_UP:   try_step();                 break;
-      case BTN_LEFT: facing = (uint8_t)((facing + 3) & 3); turns++; retro_beep(700, 6); break;
-      case BTN_DOWN: facing = (uint8_t)((facing + 1) & 3); turns++; retro_beep(700, 6); break;
-      case BTN_ACT:  do_act();                   break;
+      case BTN_UP:   try_step();      break;
+      case BTN_LEFT: cycle_select();  break;
+      case BTN_ACT:  do_act();        break;
+      case BTN_DOWN:
+        if (slider_bad) {                // fallback: no slider, cycle power
+          power = (uint8_t)((power % 5) + 1);
+          retro_beep(1000, 6);
+        } else {
+          msg_set("YOU WAIT");           // wait one turn
+          retro_beep(400, 8);
+          turns++;
+        }
+        break;
       default: break;
     }
 
+    if (turns && (turns % 4 == 0) && mp < MP_MAX) mp++;   // slow mana regen
     monsters_turn();
     fov_update();
 
     if (!hp) { game_over(); new_game(); }
   }
 }
-
