@@ -1,0 +1,242 @@
+Archive member included to satisfy reference by file (symbol)
+
+.pio\build\CH32V003\libFrameworkNoneOSVariant.a(ch32v00x_rcc.o)
+                              .pio\build\CH32V003\FrameworkNoneOSSSystem\system_ch32v00x.o (symbol from plugin) (RCC_AdjustHSICalibrationValue)
+c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(save-restore.o)
+                              C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o (__riscv_save_2)
+c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(div.o)
+                              C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o (__divsi3)
+
+Discarded input sections
+
+ .comment       0x0000000000000000      0x1d4 C:\Users\hakmin\AppData\Local\Temp\ccAPPWx6debugobj
+ .debug_info    0x0000000000000000     0x2475 C:\Users\hakmin\AppData\Local\Temp\ccAPPWx6debugobj
+ .debug_abbrev  0x0000000000000000      0xae9 C:\Users\hakmin\AppData\Local\Temp\ccAPPWx6debugobj
+ .debug_line    0x0000000000000000      0xcac C:\Users\hakmin\AppData\Local\Temp\ccAPPWx6debugobj
+ .debug_str     0x0000000000000000     0x1ed2 C:\Users\hakmin\AppData\Local\Temp\ccAPPWx6debugobj
+ .text          0x0000000000000000        0x0 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss           0x0000000000000000        0x0 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .data.ADCPrescTable
+                0x0000000000000000       0x14 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .data.AHBPrescTable
+                0x0000000000000000       0x10 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .data.APBAHBPrescTable
+                0x0000000000000000       0x10 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(save-restore.o)
+ .bss           0x0000000000000000        0x0 c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(save-restore.o)
+ .eh_frame      0x0000000000000000       0x68 c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(save-restore.o)
+ .data          0x0000000000000000        0x0 c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(div.o)
+ .bss           0x0000000000000000        0x0 c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(div.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000000000000 0x0000000000004000 xr
+RAM              0x0000000020000000 0x0000000000000800 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\hakmin\AppData\Local\Temp\ccAPPWx6debugobj
+LOAD C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+START GROUP
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libm.a
+LOAD .pio\build\CH32V003\libFrameworkNoneOSVariant.a
+END GROUP
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a
+START GROUP
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libc_nano.a
+LOAD c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32ecxw/ilp32e\libnosys.a
+END GROUP
+
+.init           0x0000000000000000        0x4
+                0x0000000000000000                _sinit = .
+                0x0000000000000000                . = ALIGN (0x4)
+ *(SORT_NONE(.init.jump))
+ .init.jump     0x0000000000000000        0x4 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+                0x0000000000000000                jump_reset
+ *(SORT_NONE(.init.vectors))
+                0x0000000000000004                . = ALIGN (0x4)
+                0x0000000000000004                _einit = .
+
+.text           0x0000000000000004      0xf1c
+                0x0000000000000004                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000000000004       0x14 c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(save-restore.o)
+                0x0000000000000004                __riscv_save_1
+                0x0000000000000004                __riscv_save_2
+                0x0000000000000004                __riscv_save_0
+                0x000000000000000e                __riscv_restore_0
+                0x000000000000000e                __riscv_restore_1
+                0x000000000000000e                __riscv_restore_2
+ .text          0x0000000000000018       0x7e c:/users/hakmin/.platformio/packages/toolchain-riscv/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32ecxw/ilp32e\libgcc.a(div.o)
+                0x0000000000000018                __divsi3
+                0x0000000000000020                __udivsi3
+                0x000000000000004c                __umodsi3
+                0x0000000000000070                __modsi3
+ *(.text.*)
+ .text.setrow   0x0000000000000096       0x78 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.num      0x000000000000010e       0x3a C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.DLY_ticks
+                0x0000000000000148       0x16 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.i2c_wait
+                0x000000000000015e       0x32 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.I2C_start.constprop.4
+                0x0000000000000190       0x78 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.I2C_stop
+                0x0000000000000208       0x30 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.I2C_write
+                0x0000000000000238       0x2e C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.OLED_init
+                0x0000000000000266       0x6a C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.hw_buttons
+                0x00000000000002d0       0x5e C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.ADC_read
+                0x000000000000032e       0x28 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.gfx_cell
+                0x0000000000000356       0xce C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.draw     0x0000000000000424      0x3c6 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.startup.main
+                0x00000000000007ea      0x3ca C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .text.reset_handler
+                0x0000000000000bb4       0x90 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+                0x0000000000000bb4                reset_handler
+ *(.rodata)
+ *(.rodata*)
+ *fill*         0x0000000000000c44        0x0 
+ .rodata.ENC_TABLE
+                0x0000000000000c44       0x10 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .rodata.FONT8  0x0000000000000c54      0x200 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .rodata.LBL.2186
+                0x0000000000000e54        0x6 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *fill*         0x0000000000000e5a        0x2 
+ .rodata.OLED_INIT_CMD
+                0x0000000000000e5c       0x11 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *fill*         0x0000000000000e6d        0x3 
+ .rodata.TILES  0x0000000000000e70       0x20 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .rodata.draw.str1.4
+                0x0000000000000e90       0x84 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .rodata.main.str1.4
+                0x0000000000000f14        0xc C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+                                          0xa (size before relaxing)
+ *(.gnu.linkonce.t.*)
+                0x0000000000000f20                . = ALIGN (0x4)
+
+.rela.dyn       0x0000000000000f20        0x0
+ .rela.text.reset_handler
+                0x0000000000000f20        0x0 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+
+.fini           0x0000000000000f20        0x0
+ *(SORT_NONE(.fini))
+                0x0000000000000f20                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (_eitcm = .)
+
+.preinit_array  0x0000000000000f20        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000000000f20        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000000000f20        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.dalign         0x0000000020000000        0x0 load address 0x0000000000000f20
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                PROVIDE (_data_vma = .)
+
+.dlalign        0x0000000000000f20        0x0
+                0x0000000000000f20                . = ALIGN (0x4)
+                0x0000000000000f20                PROVIDE (_data_lma = .)
+
+.data           0x0000000020000000        0x8 load address 0x0000000000000f20
+                0x0000000020000000                . = ALIGN (0x4)
+ *(.gnu.linkonce.r.*)
+ *(.data .data.*)
+ .data.smin     0x0000000020000000        0x2 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *(.gnu.linkonce.d.*)
+                0x0000000020000008                . = ALIGN (0x8)
+ *fill*         0x0000000020000002        0x6 
+                0x0000000020000808                PROVIDE (__global_pointer$ = (. + 0x800))
+ *(.sdata .sdata.*)
+ *(.sdata2*)
+ *(.gnu.linkonce.s.*)
+                0x0000000020000008                . = ALIGN (0x8)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+                0x0000000020000008                . = ALIGN (0x4)
+                0x0000000020000008                PROVIDE (_edata = .)
+
+.bss            0x0000000020000008      0x120 load address 0x0000000000000f28
+                0x0000000020000008                . = ALIGN (0x4)
+                0x0000000020000008                PROVIDE (_sbss = .)
+ *(.sbss*)
+ *(.gnu.linkonce.sb.*)
+ *(.bss*)
+ .bss.I2C_error
+                0x0000000020000008        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.boot_btn  0x0000000020000009        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.cur_page  0x000000002000000a        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *fill*         0x000000002000000b        0x1 
+ .bss.detents   0x000000002000000c        0x2 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.enc_acc   0x000000002000000e        0x2 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.enc_prev  0x0000000020000010        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *fill*         0x0000000020000011        0x1 
+ .bss.enc_raw   0x0000000020000012        0x2 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.last_btn  0x0000000020000014        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.oled_ok   0x0000000020000015        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *fill*         0x0000000020000016        0x2 
+ .bss.page_buf  0x0000000020000018       0x80 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.rows      0x0000000020000098       0x88 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.smax      0x0000000020000120        0x2 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ .bss.stuck_btn
+                0x0000000020000122        0x1 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *fill*         0x0000000020000123        0x1 
+ .bss.ticks     0x0000000020000124        0x2 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+ *(.gnu.linkonce.b.*)
+ *(COMMON*)
+                0x0000000020000128                . = ALIGN (0x4)
+ *fill*         0x0000000020000126        0x2 
+                0x0000000020000128                PROVIDE (_ebss = .)
+                [!provide]                        PROVIDE (_end = _ebss)
+                [!provide]                        PROVIDE (end = .)
+                0x0000000020000800                PROVIDE (_eusrstack = (ORIGIN (RAM) + LENGTH (RAM)))
+OUTPUT(.pio\build\CH32V003\firmware.elf elf32-littleriscv)
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 C:\Users\hakmin\AppData\Local\Temp\ccSOAcgJ.ltrans0.ltrans.o
+                                         0x34 (size before relaxing)
