@@ -48,6 +48,9 @@ class G:
         self.depth = 1
         self.gold = 0
         self.hp = self.hp_max = 12
+        self.mp = 8
+        self.power = 3
+        self.weapon = "SWD"
 
     def rnd(self):
         s = self.rng
@@ -193,7 +196,7 @@ class G:
     # ------------------------------------------------------- drawing ------
     def cell_code(self, x, y):
         if x == self.px and y == self.py:
-            return 4          # G_PLAYER
+            return 4 + self.facing      # G_PL_N + facing
         if not self.bget(self.seen, x, y):
             return T_VOID
         if self.bget(self.vis, x, y):
@@ -213,7 +216,7 @@ class G:
         return T_FLOOR
 
     def status(self):
-        return "HP%02d/%02d L%02d G%03d" % (self.hp, self.hp_max, self.depth, self.gold)
+        return "HP%02d M%02d P%d %s" % (self.hp, self.mp, self.power, self.weapon)
 
 # -------------------------------------------------------------- render -----
 def glyph_of(value):
@@ -258,3 +261,4 @@ if __name__ == "__main__":
         print(f"seed {seed:04X}: rooms ok, monsters={len(g.mons)}, items={len(g.items)}, "
               f"player=({g.px},{g.py})")
     print("wrote", outdir)
+
