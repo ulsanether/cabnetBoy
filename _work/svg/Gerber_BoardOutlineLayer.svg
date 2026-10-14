@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="51.784000000000006mm" height="65.7547874mm" viewBox="-10.016974600000001 -62.086974600000005 51.784000000000006 65.7547874" style="background-color:white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g transform="translate(-9.01697 2.66781) scale(1 -1) translate(9.01697 61.087)">
+    <path d="M -3.81 2.54 L 14.7509 2.54081" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 35.5611 2.54081 L 33.5291 2.54081 L 30.9891 0.0008128 L 17.2909 0.0008128 L 14.7509 2.54081" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M -8.88995 -55.8799 L -8.88995 -2.53995" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 35.56 -60.9599 L -3.80995 -60.9599" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 40.64 -2.53995 L 40.64 -55.8799" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 40.64 -55.88 A 5.08 5.08 0 0 0 35.56 -60.96" fill="none" stroke="black" stroke-width="0.254"/>
+    <path d="M -3.80997 -60.96 A 5.08 5.08 0 0 0 -8.88997 -55.88" fill="none" stroke="black" stroke-width="0.254"/>
+    <path d="M -8.88997 -2.53997 A 5.08 5.08 0 0 0 -3.80997 2.54003" fill="none" stroke="black" stroke-width="0.254"/>
+    <path d="M 35.56 2.54003 A 5.08 5.08 0 0 0 40.64 -2.53997" fill="none" stroke="black" stroke-width="0.254"/>
+  </g>
+</svg>

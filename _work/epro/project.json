@@ -1,0 +1,1716 @@
+{
+  "schematics": {
+    "29352fd497a6489db22a922a94ec8f73": {
+      "name": "RetroGame",
+      "sheets": [
+        {
+          "name": "Sheet_1",
+          "id": 1,
+          "uuid": "eecdecc0bbc7451d8100bf1cd9861c26"
+        }
+      ]
+    }
+  },
+  "pcbs": {
+    "15bb077a273c4ed1a85f056a4b433f5d": "PCB_RetroGame"
+  },
+  "panels": {},
+  "symbols": {
+    "cdbb8cd0ebd349d49dcaacbff8517bc7": {
+      "source": "b3bab6c359bb7438d4ea7587830611ee",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "100n",
+      "version": "464637b4a3d91ccd60fbf2b621c0242c",
+      "type": 2
+    },
+    "c0eb4e077f994493ad2c9755b8517de7": {
+      "source": "f1374d5f48e7e0beab64fdb365d831c2",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "100uF",
+      "version": "464637b4a3d91ccd60fbf2b621c0242c",
+      "type": 2
+    },
+    "74d94ff162f14da2b2b8ce0f1ae9196f": {
+      "source": "aee1833a891f29956b6ca6b635b33b48",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "1k",
+      "version": "68b4ee6187414e403497105ab9504433",
+      "type": 2
+    },
+    "bd9a1ce5744c4114b3cb8cb074896d43": {
+      "source": "492bb8c6c4f80a1bc1920e00602f2f3f",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "2k",
+      "version": "ea9af2f626f8e2f098839e8df65a136a",
+      "type": 2
+    },
+    "a6b54b7718d94307843b93d04ee592bb": {
+      "source": "e31c1771ffba06c7c13f1b781ad65167",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "3k9",
+      "version": "ea9af2f626f8e2f098839e8df65a136a",
+      "type": 2
+    },
+    "45a9263fd2084b8580a4757c2100a340": {
+      "source": "60a31ca347c9c442cede08b2c9c8bacd",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "4.7k",
+      "version": "1f8eb4a190d872c719138db0aa7d820b",
+      "type": 2
+    },
+    "f44f808dbb974c37ac705bcb2cf93327": {
+      "source": "3792d09639d458901ee8311e06fa8bd0",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "6*6*6mm",
+      "version": "0e657c3a0d5122a7161e1e5f10ca27a5",
+      "type": 2
+    },
+    "4f54a51f71da47b8985ad1b5b3505b5c": {
+      "source": "08d0fcf572974b369e9a55c62f90aff6",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "8k2",
+      "version": "ea9af2f626f8e2f098839e8df65a136a",
+      "type": 2
+    },
+    "a924026ebe2342feae4fb88b15f1b76d": {
+      "source": "ed219438d1828fa614b25c079a9d66fc",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "A_A4",
+      "version": "9533e9169b7576a70f7da118ff901560",
+      "type": 20
+    },
+    "e5ee3c67d4384006a95f247abdc47386": {
+      "source": "7e64f220b1eb98adef053289d3d319c0",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "Battery",
+      "version": "59fdf07bb439f2f482eb871e08fb23f9",
+      "type": 2
+    },
+    "1b743f24bae84b62a83c49ba5c1d7f21": {
+      "source": "2cca9345c53c66bdb647da4f95076476",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "BEEP",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "7e2a317c27894ab190f6c39b88aae923": {
+      "source": "f190d84517443a748c025ab7ab76cb56",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "BUTTON_A",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "ba61bd6463e44882a7b18cb354320d41": {
+      "source": "802c9e93e7a34908a2944f11dfcb5001|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"Capacitors\",\"Aluminum Electrolytic Capacitors - Leaded\"]",
+      "title": "C_Ele_SMD",
+      "version": "1656049896",
+      "type": 2
+    },
+    "db1ac96315724e918dc53657264fc951": {
+      "source": "802c9e93e7a34908a2944f11dfcb5001|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"Capacitors\",\"Aluminum Electrolytic Capacitors - Leaded\"]",
+      "title": "C_Ele_SMD",
+      "version": "1656049896",
+      "type": 2
+    },
+    "245316ebb74b40b1931b7b8c12f647f0": {
+      "source": "802c9e93e7a34908a2944f11dfcb5001|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"Capacitors\",\"Aluminum Electrolytic Capacitors - Leaded\"]",
+      "title": "C_Ele_SMD",
+      "version": "1656049896",
+      "type": 2
+    },
+    "0f4470bfbbb84643922a0c7c601bd561": {
+      "source": "8948e71c2a5aada12dbb6f9405f6b5c8",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "CH32V003A4M6",
+      "version": "a9fa72d94b70c7a7092562450209b813",
+      "type": 2
+    },
+    "be91ee886af740d7bda05e30b54e7277": {
+      "source": "dc30ec20708ef7b0f641ef78b7880a15",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "Debug",
+      "version": "ad82353def455a06df3666b21abebd7f",
+      "type": 2
+    },
+    "ba187c0f80224147b2cf913f1403a928": {
+      "source": "920d269f8e1a33f6426ba979ccdfb289",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "DIO",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "73bdae24813b4136a91fe6d21bceb97d": {
+      "source": "cd957338498985e538753ea8d071e0f9",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "GA",
+      "version": "6ef3271810688776ac5e9983842dfa89",
+      "type": 2
+    },
+    "df4397bbe6394b3c8100cf6d981f13ef": {
+      "source": "eec5ca16eb7a29985d7dcb84eac54c07",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "GND",
+      "version": "95c2d3044e52c8e3322d473919e98840",
+      "type": 18
+    },
+    "616b07796174418b8453a10911c4c427": {
+      "source": "d0c44a6053b925e6d275e24dea1f5191",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "HT24LC64_C7588532",
+      "version": "395e981ac4820aada437d54743ead3b6",
+      "type": 2
+    },
+    "40c73f029862401d8e322b9de25b92e3": {
+      "source": "c1e77e95f9ceea0ad981b3648703acd4",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "MINI SLIDE SWITCH",
+      "version": "6c525b8fa3f9e5a1fc842a5d013a21bc",
+      "type": 2
+    },
+    "e8e645c9eaef46cfb67bf1866c7a723a": {
+      "source": "8d9e477a4f9716a58121d0362eb95c43",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "MLT-5030",
+      "version": "18d782410bdc2d8509ec9deee5e7ba66",
+      "type": 2
+    },
+    "cc74b2c078c74c1ab7edf715c489ff01": {
+      "source": "3335a064362c029d23feabfa7c7fc6a8",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "MMBT3906LT1G",
+      "version": "04b801c52cbc038a97db407fa7efcd1f",
+      "type": 2
+    },
+    "e86c62fac3cc49eaab05a92308d4e391": {
+      "source": "9a91e423233cb015d469d42c56b20baa",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "PAD",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "374fc9f4e08f48c09eedc34edbb7e106": {
+      "source": "063228a945850a08c1a174ed2dcb0de6",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "R_ROTATE",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "e85dd64c0f2042ee8bbe845f03cf3c86": {
+      "source": "d6c7842e147a3241bad1d4b699386440",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "R_SLIDER",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "7e66dda0fb144b808aae89b219e952c3": {
+      "source": "19380f09248e77c2c0329b76d64fa344",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "RV09",
+      "version": "bb604761f103291d04f00be9a57e8751",
+      "type": 2
+    },
+    "22aa411e4c4247fa8b5f5779fcec7944": {
+      "source": "047b37855364f25ce01708c60aeabe37",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "SDA",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "255d7d703ba843f5b69ebeed8856bcc6": {
+      "source": "a203d5f2c811f85341bed32623f5bdf6",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "SDL",
+      "version": "715f31e6c053f7af73e1e0d96cef703b",
+      "type": 19
+    },
+    "97b8278874f14e119f62a9ce0ad2df9a": {
+      "source": "5274f26e5b5b0df59c3acea44d291893",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "SSD1306-OLED-128X64-I2C",
+      "version": "3ce531639b342b4ed78192cfd5df007e",
+      "type": 2
+    },
+    "a6906dbba25b4e999264c7abbcd19167": {
+      "source": "01db972763294804a52bbb74cc96a867",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "VCC",
+      "version": "f2e84fe76375caf8395100ee8bf21fc4",
+      "type": 18
+    },
+    "c9465f3d81c44bb693545d31bb503673": {
+      "source": "f02d2c763fb54421830535993c321b1a|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "2.54-1*2P",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"Connectors\",\"Female Headers\"]",
+      "title": "Header-Female-2.54_1x2",
+      "version": "1697188808",
+      "type": 2
+    },
+    "ea81728f4bf64a0284aa003331eb00e2": {
+      "source": "f3a1b27b2e904aa18d25d0e71c91edcb|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"Connectors\",\"Female Headers\"]",
+      "title": "PM254V-11-03-H85",
+      "version": "1712020515",
+      "type": 2
+    },
+    "29c826684dd3407a916cb8bf9a196d79": {
+      "source": "e5f479cbc3f04dbf8d19c2a70c1924cb|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[]",
+      "title": "Screw-Hole",
+      "version": "1704952034",
+      "type": 2
+    },
+    "3d0fbe2311ae42e598bf6c5d5235b438": {
+      "source": "73b4a9d8164441e68c1868e4e87cb707|0819f05c4eef4c71ace90d822a990e87",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[]",
+      "title": "Mark-Point",
+      "version": "1704951447",
+      "type": 2
+    },
+    "217b89eb6d1348cf98ad6851519dc63e": {
+      "source": "",
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "",
+      "title": "RetroGame",
+      "version": 1725204812164,
+      "type": 17
+    }
+  },
+  "footprints": {
+    "1ea35f3ed0754625a76e30edbe8362c5": {
+      "title": "0603",
+      "source": "c90b7f4378a55a9170642af29922cf5c",
+      "version": "29ed33b8dc0a988a5a58b158ef61ecf9",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "f7b7f0c0499b455d832125fea26b554d": {
+      "title": "0603",
+      "source": "c90b7f4378a55a9170642af29922cf5c",
+      "version": "1cc4fa0034c2e5cd61e7239577834f3f",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "4454785df1164530a33a7d582bc1c3f1": {
+      "title": "B-5.2*5.2",
+      "source": "349361b0e2b643180d764f7b84cc3be8",
+      "version": "92993ac30182541a4ba7aa564eff1bff",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "7d0f5fa2c55b43f49cf4a560acc304da": {
+      "title": "BATTERY-SMD-MY-2032",
+      "source": "da40f4b1a5fa65e11d17ccedeec76fed",
+      "version": "05b686a6116ed5d9a795fa1c8fae3524",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "c9d1e4dc146844608741b9c4e95eb61b": {
+      "title": "C0603",
+      "source": "4d75cc537baba5fdeb0a4050a4431bee",
+      "version": "4c60f0f43ca97f8521b4f2325ff4e808",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "9571d2e068ad49cbb1d026dff1fdb123": {
+      "title": "CAP-SMD_BD3.0-L3.3-W3.3-RD",
+      "source": "a08acac0b22e40a5aee7fdc6ffe2c4b3|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1620629079",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"CAP-SMD\"]"
+    },
+    "26eb33d17a38417cae54c51949d5860a": {
+      "title": "CAP-SMD_BD3.0-L3.3-W3.3-RD",
+      "source": "a08acac0b22e40a5aee7fdc6ffe2c4b3|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1620629079",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"CAP-SMD\"]"
+    },
+    "5fba0ef226ca4569859524f3584daac9": {
+      "title": "CAP-SMD_BD3.0-L3.3-W3.3-RD",
+      "source": "a08acac0b22e40a5aee7fdc6ffe2c4b3|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1620629079",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"CAP-SMD\"]"
+    },
+    "67cd27197eff4795a2cfaa6f612ea5bf": {
+      "title": "KEY-6.0*6.0",
+      "source": "724e116160a2cae7a9a9a2a7c4c70e13",
+      "version": "27bdc9f88375e70983d8a44faf80c866",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "739074d9056b47e28b9c1774b7ba5f41": {
+      "title": "PADS_SOT23-132",
+      "source": "a547293ad04eff5bec06d648e563e042",
+      "version": "f1d6989556593907af96e33f12715e11",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "0a4b5f4024c84c0fbb606cbd5b3693b5": {
+      "title": "PSM050S-10B10KB",
+      "source": "8017da4a836f83c0d3df1a8d4371dff3",
+      "version": "c550c6e2bc8428b2f84c9716a8bbf8b4",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "a9e86dc77a5d4ba2adf5f2d4fbd34df7": {
+      "title": "R0603",
+      "source": "e83e314991e48aee62e2db43678e87c9",
+      "version": "0e43981f13b3612b375222f666e21ffa",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "5840270c68ed4ab2b72b589eba1cbb45": {
+      "title": "R0603",
+      "source": "e83e314991e48aee62e2db43678e87c9",
+      "version": "d35c61fe6ce52aa8cc8c1b7906fcdf88",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "67f477af76ef44e29f1066bb973e5abb": {
+      "title": "RV09",
+      "source": "19380f09248e77c2c0329b76d64fa344",
+      "version": "ed8cbc2dfb0dbb613773d1bea441e639",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "d889e296c31a41ab87b66910e8d20af7": {
+      "title": "SOIC-16_L9.9-W3.9-P1.27-LS6.0-BL",
+      "source": "80f2664af0815581da262a243be003d7",
+      "version": "1e2afa4a9709db7f8a620c2f517a3cdb",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "0faf7c642c9e409182d4f37b41d5567d": {
+      "title": "SOP-8_L4.9-W3.9-P1.27-LS6.0-BL",
+      "source": "41f85f2a462b9d7dfc2637f5861587d2",
+      "version": "336f21daf6b1bddb08524cf4ded5ad9d",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "5ac6cc4cef294c2c891889e1b5794bbf": {
+      "title": "SSD1306-OLED-128X64-I2C",
+      "source": "5274f26e5b5b0df59c3acea44d291893",
+      "version": "133d9b3f92068a44d330c7c063686a53",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "f4eb9cbc846e47a3803b2ecb9949429c": {
+      "title": "CONN-TH_PH-CONNECTOR01.08.40.001.001",
+      "source": "b5dbdb9e53bd384fa56cb109034962b6",
+      "version": 1725240930157,
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    },
+    "35440c474b724d2d84343d19eb43e1bb": {
+      "title": "HDR-TH_2P-P2.54-V-F",
+      "source": "1959da57ac47495586b2e89cc8a32c48|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1681552554",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"HDR-TH\"]"
+    },
+    "71d3d76cea2e4779bff2133fc7ec9675": {
+      "title": "HDR-TH_3P-P2.54-V-F",
+      "source": "aa14da9f1aa94bdf8754828b04310e9a|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1715994897",
+      "type": 4,
+      "desc": ";插件,P=2.54mm;TH-3P;HDR-TH;TH-3P,P=2.54mm",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[\"HDR-TH\"]"
+    },
+    "3876a41191254d9d9d349b909de8befc": {
+      "title": "Screw-Hole-M2",
+      "source": "47abeaedbecf4377bd779a5cf1d7f22b|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1704952179",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[]"
+    },
+    "187b51eba353430eb05248a8ad64b66d": {
+      "title": "Screw-Hole-M2",
+      "source": "47abeaedbecf4377bd779a5cf1d7f22b|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1704952179",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[]"
+    },
+    "7692ef2f007747b08a26eee563b74446": {
+      "title": "Mark-Point-1mm",
+      "source": "42384742744f43e3847309afacbea172|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1704951447",
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": "[]"
+    },
+    "462f53db311242bcbea51f27237c5882": {
+      "title": "MINI SLIDE SWITCH SPDT - 3PİN - 2.54MM - 11X5.5MM - SS12D00G3-FP",
+      "source": "cef096e725f32486d9e162ebada4c63b",
+      "version": 1725257872241,
+      "type": 4,
+      "desc": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "custom_tags": ""
+    }
+  },
+  "devices": {
+    "94a8b0cd50ba48d494dbfd41870147fe": {
+      "title": "100n",
+      "attributes": {
+        "Designator": "C?",
+        "Symbol": "cdbb8cd0ebd349d49dcaacbff8517bc7",
+        "Supplier Part": "",
+        "Supplier": "",
+        "Manufacturer Part": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "c9d1e4dc146844608741b9c4e95eb61b",
+        "Name": "100n",
+        "Description": "",
+        "3D Model": "624118aa3cc7497086c383c2d72e0852",
+        "3D Model Title": "C0603_L1.6-W0.8-H0.8"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "b3bab6c359bb7438d4ea7587830611ee",
+      "version": "27b2fa57435bcf13d4b9a2707faf9e77",
+      "custom_tags": ""
+    },
+    "11d3dcfe431a4801b1cbe174ee34f359": {
+      "title": "100uF",
+      "attributes": {
+        "Designator": "C?",
+        "Symbol": "c0eb4e077f994493ad2c9755b8517de7",
+        "Supplier Part": "",
+        "Supplier": "",
+        "Manufacturer Part": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "c9d1e4dc146844608741b9c4e95eb61b",
+        "Name": "100uF",
+        "Description": "",
+        "3D Model": "624118aa3cc7497086c383c2d72e0852",
+        "3D Model Title": "C0603_L1.6-W0.8-H0.8"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "f1374d5f48e7e0beab64fdb365d831c2",
+      "version": "8c86d26328423a9d02745dba6cf141b6",
+      "custom_tags": ""
+    },
+    "516ba8bc145e41a5b2707281195a0154": {
+      "title": "1k",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "74d94ff162f14da2b2b8ce0f1ae9196f",
+        "Supplier Part": "",
+        "Supplier": "",
+        "Manufacturer Part": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "5840270c68ed4ab2b72b589eba1cbb45",
+        "Name": "1k",
+        "Description": "",
+        "3D Model": "112863783b5b41f1b5254f87eedc7932",
+        "3D Model Title": "R0603"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "aee1833a891f29956b6ca6b635b33b48",
+      "version": "d745b7ecdf1da7171c5eb9397259532b",
+      "custom_tags": ""
+    },
+    "49f747f5e3d54a62bca99f82a19f4948": {
+      "title": "1k",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "74d94ff162f14da2b2b8ce0f1ae9196f",
+        "Supplier Part": "",
+        "Supplier": "",
+        "Manufacturer Part": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "a9e86dc77a5d4ba2adf5f2d4fbd34df7",
+        "Name": "1k",
+        "Description": "",
+        "3D Model": "112863783b5b41f1b5254f87eedc7932",
+        "3D Model Title": "R0603"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "aee1833a891f29956b6ca6b635b33b48",
+      "version": "0a69471260fdb46e98763eec81361ca9",
+      "custom_tags": ""
+    },
+    "67d0a8ed0f494e059374943ce8cdef9d": {
+      "title": "2k",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "bd9a1ce5744c4114b3cb8cb074896d43",
+        "Manufacturer Part": "0603WAF2001T5E",
+        "Supplier": "LCSC",
+        "Manufacturer": "UniOhm",
+        "Supplier Part": "C22975",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "f7b7f0c0499b455d832125fea26b554d",
+        "Name": "2k",
+        "Description": "",
+        "3D Model": "6aa93b2ff91b4b1ca9ff134ea14ab162",
+        "3D Model Title": "R0603_L1.6-W0.8-H0.5"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "492bb8c6c4f80a1bc1920e00602f2f3f",
+      "version": "8b6121b868c5e18d40152f7dc4502a33",
+      "custom_tags": ""
+    },
+    "be8f19ff6eb64306a707661ab1fa136a": {
+      "title": "2k",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "bd9a1ce5744c4114b3cb8cb074896d43",
+        "Manufacturer Part": "0603WAF2001T5E",
+        "Supplier": "LCSC",
+        "Manufacturer": "UniOhm",
+        "Supplier Part": "C22975",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "1ea35f3ed0754625a76e30edbe8362c5",
+        "Name": "2k",
+        "Description": "",
+        "3D Model": "6aa93b2ff91b4b1ca9ff134ea14ab162",
+        "3D Model Title": "R0603_L1.6-W0.8-H0.5"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "492bb8c6c4f80a1bc1920e00602f2f3f",
+      "version": "e44fb8dde0e2cb982a66c69cd215820d",
+      "custom_tags": ""
+    },
+    "d2a4887e45de46919073afee9a2464bd": {
+      "title": "3k9",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "a6b54b7718d94307843b93d04ee592bb",
+        "Manufacturer Part": "0603WAF3901T5E",
+        "Supplier": "LCSC",
+        "Manufacturer": "UniOhm",
+        "Supplier Part": "C23018",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "1ea35f3ed0754625a76e30edbe8362c5",
+        "Name": "3k9",
+        "Description": "",
+        "3D Model": "6aa93b2ff91b4b1ca9ff134ea14ab162",
+        "3D Model Title": "R0603_L1.6-W0.8-H0.5"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "e31c1771ffba06c7c13f1b781ad65167",
+      "version": "566a9f4b1c6d4ddfd064e876f0a5504a",
+      "custom_tags": ""
+    },
+    "fe884da9bd5e4dc486ad7f4986a483c3": {
+      "title": "4.7k",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "45a9263fd2084b8580a4757c2100a340",
+        "Supplier Part": "",
+        "Supplier": "",
+        "Manufacturer Part": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "a9e86dc77a5d4ba2adf5f2d4fbd34df7",
+        "Name": "4.7k",
+        "Description": "",
+        "3D Model": "112863783b5b41f1b5254f87eedc7932",
+        "3D Model Title": "R0603"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "60a31ca347c9c442cede08b2c9c8bacd",
+      "version": "6bd7d1e87dbc3dc75cf25d8fde8de772",
+      "custom_tags": ""
+    },
+    "6dfb610ec3aa4cd69608f579c5b622d6": {
+      "title": "6*6*6mm",
+      "attributes": {
+        "Designator": "UP?",
+        "Symbol": "f44f808dbb974c37ac705bcb2cf93327",
+        "Supplier Part": "C23873",
+        "Supplier": "LCSC",
+        "Manufacturer": "ReliaPro",
+        "Manufacturer Part": "SMD Tactile Switch6*6*6mm",
+        "image": "http://image.lceda.cn/szlcsc/C23873.jpg",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "67cd27197eff4795a2cfaa6f612ea5bf",
+        "Name": "6*6*6mm",
+        "Description": "",
+        "3D Model": "d049f62955bd431685d54c47f33e831c",
+        "3D Model Title": "KEY-SMD_4P-L6.2-W6.2-H5.0-LS9.0-P4.5"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "3792d09639d458901ee8311e06fa8bd0",
+      "version": "0595b5c5f0d9adcb94b77b03d9a3058a",
+      "custom_tags": ""
+    },
+    "ae7c943d13fb4944b12a13ffd76f7829": {
+      "title": "8k2",
+      "attributes": {
+        "Designator": "R?",
+        "Symbol": "4f54a51f71da47b8985ad1b5b3505b5c",
+        "Manufacturer Part": "0603WAF8201T5E",
+        "Supplier": "LCSC",
+        "Manufacturer": "UniOhm",
+        "Supplier Part": "C25981",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "1ea35f3ed0754625a76e30edbe8362c5",
+        "Name": "8k2",
+        "Description": "",
+        "3D Model": "6aa93b2ff91b4b1ca9ff134ea14ab162",
+        "3D Model Title": "R0603_L1.6-W0.8-H0.5"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "08d0fcf572974b369e9a55c62f90aff6",
+      "version": "63bff51d97640e25a48605e36c00f93b",
+      "custom_tags": ""
+    },
+    "197c86de07254b769e1f121b2d26a4be": {
+      "title": "A_A4",
+      "attributes": {
+        "Symbol": "a924026ebe2342feae4fb88b15f1b76d",
+        "@Project Name": "GAME",
+        "REV": "1.0",
+        "Date": "2024-08-31",
+        "Sheet": "1/1",
+        "Draw By": "DaftWork",
+        "Company": "DaftWork",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "",
+        "Name": "A_A4",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "ed219438d1828fa614b25c079a9d66fc",
+      "version": "28709521d7540d3de2dde8d59c541fb2",
+      "custom_tags": ""
+    },
+    "8f5d107346044636a5d582d33b335893": {
+      "title": "Battery",
+      "attributes": {
+        "Designator": "U?",
+        "Symbol": "e5ee3c67d4384006a95f247abdc47386",
+        "Supplier": "LCSC",
+        "Supplier Part": "C964827",
+        "Manufacturer": "MYOUNG(美阳)",
+        "Manufacturer Part": "MY-2032-10",
+        "link": "https://atta.szlcsc.com/upload/public/pdf/source/20201218/C964827_472A5A3FFA887939B5A774E7907ABE67.pdf",
+        "JLCPCB Part Class": "Extended Part",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "7d0f5fa2c55b43f49cf4a560acc304da",
+        "Name": "Battery",
+        "Description": "",
+        "3D Model": "30b387a0ff5d4598960c9860445995ea",
+        "3D Model Title": "BATTERY-SMD-MY-2032"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "7e64f220b1eb98adef053289d3d319c0",
+      "version": "959de56ed59c1c724972e89e8a6849a9",
+      "custom_tags": ""
+    },
+    "e9ce695f354c46fea0381a6fe078c674": {
+      "title": "BEEP",
+      "attributes": {
+        "Symbol": "1b743f24bae84b62a83c49ba5c1d7f21",
+        "Footprint": "",
+        "Name": "BEEP",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "2cca9345c53c66bdb647da4f95076476",
+      "version": "8b596a5a172651aecc1b4013ed9eb791",
+      "custom_tags": ""
+    },
+    "1e0ae9a3e15b497aa46f2516076e4481": {
+      "title": "BUTTON_A",
+      "attributes": {
+        "Symbol": "7e2a317c27894ab190f6c39b88aae923",
+        "Footprint": "",
+        "Name": "BUTTON_A",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "f190d84517443a748c025ab7ab76cb56",
+      "version": "0548b96aa797ccd4fd2a972b1bf36c23",
+      "custom_tags": ""
+    },
+    "c02ed26728394e6f9f711065269f95b0": {
+      "title": "C_Ele_SMD_3x5.4mm",
+      "attributes": {
+        "Supplier Footprint": "SMD,3x5.4mm",
+        "Add into BOM": "yes",
+        "Convert to PCB": "yes",
+        "Symbol": "ba61bd6463e44882a7b18cb354320d41",
+        "Designator": "C?",
+        "Footprint": "9571d2e068ad49cbb1d026dff1fdb123",
+        "3D Model": "11c0cf6f156844fa9e81c645dd262f58",
+        "3D Model Title": "CAP-SMD_BD3.0-L3.3-W3.3-H5.3",
+        "3D Model Transform": "129.92,149.6,209.09,-90,0,0,0,0,0",
+        "Value": "10uF",
+        "Name": "={Value}",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "954cc515a838470b97cc4be377dd7ac6|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1656050082",
+      "custom_tags": "[\"Capacitors\",\"Aluminum Electrolytic Capacitors - SMD\"]"
+    },
+    "ce29b751793b4f3b9e569bec9493b4bf": {
+      "title": "C_Ele_SMD_3x5.4mm",
+      "attributes": {
+        "Supplier Footprint": "SMD,3x5.4mm",
+        "Add into BOM": "yes",
+        "Convert to PCB": "yes",
+        "Symbol": "db1ac96315724e918dc53657264fc951",
+        "Designator": "C?",
+        "Footprint": "26eb33d17a38417cae54c51949d5860a",
+        "3D Model": "11c0cf6f156844fa9e81c645dd262f58",
+        "3D Model Title": "CAP-SMD_BD3.0-L3.3-W3.3-H5.3",
+        "3D Model Transform": "129.92,149.6,209.09,-90,0,0,0,0,0",
+        "Value": "10uF",
+        "Name": "={Value}",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "954cc515a838470b97cc4be377dd7ac6|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1656050082",
+      "custom_tags": "[\"Capacitors\",\"Aluminum Electrolytic Capacitors - SMD\"]"
+    },
+    "3dc809a74b1f482599377acb9b92fef4": {
+      "title": "C_Ele_SMD_3x5.4mm",
+      "attributes": {
+        "Supplier Footprint": "SMD,3x5.4mm",
+        "Add into BOM": "yes",
+        "Convert to PCB": "yes",
+        "Symbol": "245316ebb74b40b1931b7b8c12f647f0",
+        "Designator": "C?",
+        "Footprint": "5fba0ef226ca4569859524f3584daac9",
+        "3D Model": "11c0cf6f156844fa9e81c645dd262f58",
+        "3D Model Title": "CAP-SMD_BD3.0-L3.3-W3.3-H5.3",
+        "3D Model Transform": "129.92,149.6,209.09,-90,0,0,0,0,0",
+        "Value": "10uF",
+        "Name": "={Value}",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "954cc515a838470b97cc4be377dd7ac6|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1656050082",
+      "custom_tags": "[\"Capacitors\",\"Aluminum Electrolytic Capacitors - SMD\"]"
+    },
+    "ede282fe282c42e79244073d8bdcde5b": {
+      "title": "CH32V003A4M6",
+      "attributes": {
+        "Designator": "U?",
+        "Symbol": "0f4470bfbbb84643922a0c7c601bd561",
+        "Supplier": "LCSC",
+        "Supplier Part": "C5346357",
+        "Manufacturer": "WCH(南京沁恒)",
+        "Manufacturer Part": "CH32V003A4M6",
+        "JLCPCB Part Class": "Extended Part",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "d889e296c31a41ab87b66910e8d20af7",
+        "Name": "CH32V003A4M6",
+        "Description": "",
+        "3D Model": "a1bf90d8da9448dd8d80b79d86e5d7e2",
+        "3D Model Title": "SOIC-16_L9.9-W3.9-H1.8-LS6.0-P1.27"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "8948e71c2a5aada12dbb6f9405f6b5c8",
+      "version": "0e213e10f502aad8501386e4c0fbe9d1",
+      "custom_tags": ""
+    },
+    "0497472869a24747ba8ab2a4658c0dd8": {
+      "title": "Debug",
+      "attributes": {
+        "Designator": "U?",
+        "Symbol": "be91ee886af740d7bda05e30b54e7277",
+        "Supplier": "LCSC",
+        "Supplier Part": "C9900005438",
+        "Manufacturer": "null",
+        "Manufacturer Part": "PH-CONNECTOR 01.08.40.001.001",
+        "JLCPCB Part Class": "Extended Part",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "f4eb9cbc846e47a3803b2ecb9949429c",
+        "Name": "Debug",
+        "Description": "",
+        "3D Model": "d2d7bbee3e3c4f8d9089f23ea41a627d",
+        "3D Model Title": "CONN-TH_PH-CONNECTOR01.08.40.001.001"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "dc30ec20708ef7b0f641ef78b7880a15",
+      "version": "ad8abf44622f288d147c5e23301456ce",
+      "custom_tags": ""
+    },
+    "8d6ad2d1d66f4ecfb2803455e3844389": {
+      "title": "DIO",
+      "attributes": {
+        "Symbol": "ba187c0f80224147b2cf913f1403a928",
+        "Footprint": "",
+        "Name": "DIO",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "920d269f8e1a33f6426ba979ccdfb289",
+      "version": "56ef6721e1237d8379646d922e66e1fc",
+      "custom_tags": ""
+    },
+    "249d91c37a914d0b96856664ec1f45ed": {
+      "title": "GA",
+      "attributes": {
+        "Designator": "U?",
+        "Symbol": "73bdae24813b4136a91fe6d21bceb97d",
+        "Manufacturer": "TT Electronics",
+        "Manufacturer Part": "PSM050S-10B10KB",
+        "Supplier": "Digi-Key",
+        "Supplier Part": "PSM050S-10B10KB",
+        "link": "https://www.digikey.com/en/products/detail/tt-electronics-bi/PSM050S-10B10KB/9997286",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "0a4b5f4024c84c0fbb606cbd5b3693b5",
+        "Name": "GA",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "cd957338498985e538753ea8d071e0f9",
+      "version": "6c6d48103a0184b49150334e02f451d2",
+      "custom_tags": ""
+    },
+    "032ed9dc013d497a92b24ba9da1abfdb": {
+      "title": "GND",
+      "attributes": {
+        "Symbol": "df4397bbe6394b3c8100cf6d981f13ef",
+        "Footprint": "",
+        "Name": "GND",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "eec5ca16eb7a29985d7dcb84eac54c07",
+      "version": "496380a0d2ffa15173a4c736c2d8caa8",
+      "custom_tags": ""
+    },
+    "c58d2c87b5d24f19bac698e99d49b5f2": {
+      "title": "HT24LC64_C7588532",
+      "attributes": {
+        "Designator": "U?",
+        "Symbol": "616b07796174418b8453a10911c4c427",
+        "Supplier": "LCSC",
+        "Supplier Part": "C7588532",
+        "Manufacturer": "HOLTEK(合泰/盛群)",
+        "Manufacturer Part": "HT24LC64",
+        "JLCPCB Part Class": "Extended Part",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "0faf7c642c9e409182d4f37b41d5567d",
+        "Name": "HT24LC64_C7588532",
+        "Description": "",
+        "3D Model": "9e479aa4755a4392b89c401224ad1275",
+        "3D Model Title": "SOP-8_L4.9-W3.9-P1.27-LS6.0-BL-1"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "d0c44a6053b925e6d275e24dea1f5191",
+      "version": "351661af6ae428236799392180e90162",
+      "custom_tags": ""
+    },
+    "479173f52aba430187ed0bb3b0a449a1": {
+      "title": "MINI SLIDE SWITCH",
+      "attributes": {
+        "Designator": "POWER?",
+        "Symbol": "40c73f029862401d8e322b9de25b92e3",
+        "Manufacturer Part": "COM-00102",
+        "Mounted": "No",
+        "Supplier": "Digi-Key",
+        "Supplier Part": "1568-COM-00102-ND",
+        "Manufacturer": "SparkFun Electronics",
+        "link": "https://www.digikey.com/en/products/detail/sparkfun-electronics/COM-00102/14671644?s=N4IgjCBcoLQdIDGUBmBDANgZwKYBoQB7KAbXAFYA2ADhAF0BfBggJlJAFsBLAOy4AIsGLgBMcggO5cALogAW-AMoAFACIAVegyA",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "462f53db311242bcbea51f27237c5882",
+        "Name": "MINI SLIDE SWITCH",
+        "Description": "",
+        "3D Model": "50d0bb9868324bcdbef41d11856888c7",
+        "3D Model Title": "SS12"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "c1e77e95f9ceea0ad981b3648703acd4",
+      "version": "ca66d9167899b0c93da2fb312cbd492d",
+      "custom_tags": ""
+    },
+    "352bba30af704af9ae93d8bfc7db1323": {
+      "title": "MLT-5030",
+      "attributes": {
+        "Designator": "BUZZER?",
+        "Symbol": "e8e645c9eaef46cfb67bf1866c7a723a",
+        "Supplier Part": "C95297",
+        "Supplier": "LCSC",
+        "Manufacturer": "HNDZ",
+        "Manufacturer Part": "MLT-5030",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "4454785df1164530a33a7d582bc1c3f1",
+        "Name": "MLT-5030",
+        "Description": "",
+        "3D Model": "dbfa517481d24feeaebecda297867593",
+        "3D Model Title": "BUZ-SMD_3P-L5.2-W5.2-H2.0-P3.50"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "8d9e477a4f9716a58121d0362eb95c43",
+      "version": "ef22d4188298e53c3ff6c2c0da293143",
+      "custom_tags": ""
+    },
+    "90a0fe942ddb458fabd2deedb518faa7": {
+      "title": "MMBT3906LT1G",
+      "attributes": {
+        "Designator": "Q?",
+        "Symbol": "cc74b2c078c74c1ab7edf715c489ff01",
+        "Manufacturer": "",
+        "Manufacturer Part": "",
+        "Supplier Part": "",
+        "Supplier": "",
+        "link": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "739074d9056b47e28b9c1774b7ba5f41",
+        "Name": "MMBT3906LT1G",
+        "Description": "",
+        "3D Model": "62a57c6760504a01965db6419a6d07df",
+        "3D Model Title": "SOT-23-3P_L2.9-W1.3-H1.0-LS2.4-P0.95"
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "3335a064362c029d23feabfa7c7fc6a8",
+      "version": "aeb1933bce3a81eb45f97e38a843da04",
+      "custom_tags": ""
+    },
+    "3e759ff9d822484982fdee64676c9a32": {
+      "title": "PAD",
+      "attributes": {
+        "Symbol": "e86c62fac3cc49eaab05a92308d4e391",
+        "Footprint": "",
+        "Name": "PAD",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "9a91e423233cb015d469d42c56b20baa",
+      "version": "f674488a6b50e17ed1fa108ade3edcab",
+      "custom_tags": ""
+    },
+    "808d192e64af446a82e756232b3fddaa": {
+      "title": "R_Rotate",
+      "attributes": {
+        "Symbol": "374fc9f4e08f48c09eedc34edbb7e106",
+        "Footprint": "",
+        "Name": "R_Rotate",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "063228a945850a08c1a174ed2dcb0de6",
+      "version": "511c501436512ac56dbb819f0af20fb6",
+      "custom_tags": ""
+    },
+    "4f5706e9573042e1a94ab37e4db3ffb3": {
+      "title": "R_Slider",
+      "attributes": {
+        "Symbol": "e85dd64c0f2042ee8bbe845f03cf3c86",
+        "Footprint": "",
+        "Name": "R_Slider",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "d6c7842e147a3241bad1d4b699386440",
+      "version": "8a0a7014f03b3d516320df00ded7d1c6",
+      "custom_tags": ""
+    },
+    "819d404cfc2240dcb8bf6cee10445ba2": {
+      "title": "RV09",
+      "attributes": {
+        "Designator": "HANDLER?",
+        "Symbol": "7e66dda0fb144b808aae89b219e952c3",
+        "Manufacturer Part": "RV09",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "67f477af76ef44e29f1066bb973e5abb",
+        "Name": "RV09",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "19380f09248e77c2c0329b76d64fa344",
+      "version": "508a010ae020b08d17cc8100b807e95b",
+      "custom_tags": ""
+    },
+    "14f8328217ed40b98610081c36dea4a5": {
+      "title": "SDA",
+      "attributes": {
+        "Symbol": "22aa411e4c4247fa8b5f5779fcec7944",
+        "Footprint": "",
+        "Name": "SDA",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "047b37855364f25ce01708c60aeabe37",
+      "version": "632de585be271ca7a50d63bd4788371b",
+      "custom_tags": ""
+    },
+    "456814b4914e444bbb8cc77ed8ef1208": {
+      "title": "SDL",
+      "attributes": {
+        "Symbol": "255d7d703ba843f5b69ebeed8856bcc6",
+        "Footprint": "",
+        "Name": "SDL",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "a203d5f2c811f85341bed32623f5bdf6",
+      "version": "170958aca1bb8085e4b39bbdb46bc667",
+      "custom_tags": ""
+    },
+    "0363015da2154d6da1070ab9f6b39edf": {
+      "title": "SSD1306-OLED-128X64-I2C",
+      "attributes": {
+        "Designator": "LCD?",
+        "Symbol": "97b8278874f14e119f62a9ce0ad2df9a",
+        "Manufacturer": "",
+        "Manufacturer Part": "",
+        "Supplier Part": "",
+        "Supplier": "",
+        "link": "",
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Footprint": "5ac6cc4cef294c2c891889e1b5794bbf",
+        "Name": "SSD1306-OLED-128X64-I2C",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "5274f26e5b5b0df59c3acea44d291893",
+      "version": "bd2014653099537f894eb0a1bdcebe40",
+      "custom_tags": ""
+    },
+    "04e1ab3c44554dafa0ad04a5ad2de08d": {
+      "title": "VCC",
+      "attributes": {
+        "Symbol": "a6906dbba25b4e999264c7abbcd19167",
+        "Footprint": "",
+        "Name": "VCC",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "01db972763294804a52bbb74cc96a867",
+      "version": "c57a5691c03113e80f5cc9766b3778ac",
+      "custom_tags": ""
+    },
+    "017005016e0e470d8ae49d69b5145ac0": {
+      "title": "HDR-F_2.54_1x2P",
+      "attributes": {
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Designator": "H?",
+        "Supplier Footprint": "Through",
+        "Symbol": "c9465f3d81c44bb693545d31bb503673",
+        "Footprint": "35440c474b724d2d84343d19eb43e1bb",
+        "3D Model": "925d5dffa823422895d76d9dc6f5e8cd",
+        "3D Model Title": "HDR-TH_2P-P2.54-F-LI-1X2P",
+        "3D Model Transform": "215.7476,98.425,0,0,0,0,0,0,-129.921",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "347ca7593ddc4bf5be966537dca5d412|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1657006080",
+      "custom_tags": "[\"Connectors\",\"Female Headers\"]"
+    },
+    "9697bf4c999b43ec826159f3ece652bf": {
+      "title": "HDR-F_2.54_1x3P",
+      "attributes": {
+        "Convert to PCB": "yes",
+        "Add into BOM": "yes",
+        "Designator": "H?",
+        "Supplier Footprint": "Through",
+        "Symbol": "ea81728f4bf64a0284aa003331eb00e2",
+        "Footprint": "71d3d76cea2e4779bff2133fc7ec9675",
+        "3D Model": "c4885d32aea14d52b4550297fa76950a",
+        "3D Model Title": "HDR2.54-F-LI-1X3P",
+        "3D Model Transform": "299.9994,100,0,0,0,0,0,0,-118.11",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "8e27d783a6b9496e84aee8beb0e4a5c2|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1657005729",
+      "custom_tags": "[\"Connectors\",\"Female Headers\"]"
+    },
+    "973ef4a0b6424d4498bbe37f4b542371": {
+      "title": "Screw-Hole-M2",
+      "attributes": {
+        "Add into BOM": "yes",
+        "Convert to PCB": "yes",
+        "Symbol": "29c826684dd3407a916cb8bf9a196d79",
+        "Designator": "SCREW?",
+        "Name": "",
+        "Supplier Footprint": "插件",
+        "Footprint": "3876a41191254d9d9d349b909de8befc",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "50e7eb2d68074074b6cb0078d7934331|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1704952125",
+      "custom_tags": "[]"
+    },
+    "096a218c12fb4ad78bdb79e26dae1184": {
+      "title": "Screw-Hole-M2",
+      "attributes": {
+        "Add into BOM": "yes",
+        "Convert to PCB": "yes",
+        "Symbol": "29c826684dd3407a916cb8bf9a196d79",
+        "Designator": "SCREW?",
+        "Name": "",
+        "Supplier Footprint": "插件",
+        "Footprint": "187b51eba353430eb05248a8ad64b66d",
+        "Description": ""
+      },
+      "description": "",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [
+        ""
+      ],
+      "source": "50e7eb2d68074074b6cb0078d7934331|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1704952125",
+      "custom_tags": "[]"
+    },
+    "2c31696ff08148d8b627535a290fd015": {
+      "title": "Mark-Point",
+      "attributes": {
+        "Designator": "MARK?",
+        "Add into BOM": "no",
+        "Convert to PCB": "yes",
+        "Symbol": "3d0fbe2311ae42e598bf6c5d5235b438",
+        "Name": "",
+        "Footprint": "7692ef2f007747b08a26eee563b74446",
+        "Description": "Mark点"
+      },
+      "description": "Mark点",
+      "tags": {
+        "parent_tag": [],
+        "child_tag": []
+      },
+      "images": [],
+      "source": "eff7a72ff31a4f109218e7499d4a095c|0819f05c4eef4c71ace90d822a990e87",
+      "version": "1704951448",
+      "custom_tags": "[]"
+    }
+  },
+  "boards": {
+    "RetroGame": {
+      "schematic": "29352fd497a6489db22a922a94ec8f73",
+      "pcb": "15bb077a273c4ed1a85f056a4b433f5d"
+    }
+  },
+  "config": {
+    "title": "RetroGame_2024-09-02_00-02-09",
+    "cbbProject": false,
+    "defaultSheet": "",
+    "editorVersion": "2.2.27.1"
+  }
+}

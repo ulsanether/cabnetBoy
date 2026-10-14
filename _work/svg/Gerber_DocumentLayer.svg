@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="29.516200999999995mm" height="59.41746199999999mm" viewBox="1.520188 -56.333645999999995 29.516200999999995 59.41746199999999" style="background-color:white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g transform="translate(2.52019 2.08382) scale(1 -1) translate(-2.52019 55.3336)">
+    <path d="M 2.52019 2.08382 L 2.52019 -2.6162 L 6.32003 -2.6162 L 6.32003 -2.11582 L 3.12014 -2.11582 L 3.12014 1.58394 L 12.1199 1.58394 L 12.1199 -2.11582 L 9.02005 -2.11582 L 9.02005 -2.6162 L 12.7198 -2.6162 L 12.7198 2.08382 L 2.52019 2.08382" fill="black"/>
+    <path d="M 29.9094 -7.52432 L 29.9094 -26.7843" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 3.20934 -7.52432 L 3.20934 -26.7843" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 3.20934 -7.52432 L 29.9094 -7.52432" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 3.20934 -26.7843 L 29.9094 -26.7843" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.254"/>
+    <path d="M 21.59 -51.1839 L 21.59 -48.3839" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.09906"/>
+    <path d="M 22.99 -49.7839 L 20.19 -49.7839" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.09906"/>
+    <path d="M 21.59 -51.1983 A 1.41427 1.41427 0 1 1 21.5826 -51.1982" fill="none" stroke="black" stroke-width="0.09906"/>
+    <path d="M 21.59 -55.2841 A 5.50012 5.50012 0 1 1 21.5842 -55.2841" fill="none" stroke="black" stroke-width="0.09906"/>
+    <path d="M 27.7092 -21.18 A 0.150114 0.150114 0 1 1 27.409 -21.18 A 0.150114 0.150114 0 1 1 27.7092 -21.18" fill="none" stroke="black" stroke-width="0.29972"/>
+    <path d="M 19.0664 -11.0583 A 0.249936 0.249936 0 1 1 18.5665 -11.0583 A 0.249936 0.249936 0 1 1 19.0664 -11.0583" fill="none" stroke="black" stroke-width="0.50038"/>
+  </g>
+</svg>
